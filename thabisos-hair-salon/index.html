@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A website concept for Thabiso's Hair Salon in Kempton Park.">
+  <title>Thabiso's Hair Salon | Hair, Styled Your Way</title>
+  <style>
+    :root {
+      --brown: #241914;
+      --brown-light: #3a2921;
+      --cream: #f6f0e7;
+      --cream-dark: #e8ddcf;
+      --copper: #bd8058;
+      --muted: #b8a99a;
+      --white: #fffaf4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .notice {
+      padding: 9px 16px;
+      text-align: center;
+      background: var(--copper);
+      color: #21150f;
+      font: 700 11px Arial, sans-serif;
+      letter-spacing: 1.5px;
+    }
+    header {
+      background: var(--brown);
+      color: var(--cream);
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand { font-size: 21px; letter-spacing: 1px; }
+    .brand span { display: block; color: var(--copper); font: 10px Arial, sans-serif; letter-spacing: 3px; }
+    nav { display: flex; gap: 26px; font: 13px Arial, sans-serif; }
+    nav a { color: #e8ddd3; }
+    nav a:hover { color: var(--copper); }
+    .hero {
+      min-height: 570px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      background: var(--brown);
+      color: var(--cream);
+    }
+    .hero-copy {
+      padding: 95px 8% 90px 13%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .eyebrow { color: var(--copper); font: 700 11px Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+    h1 { font-size: clamp(48px, 6vw, 78px); line-height: 1.02; font-weight: 400; margin: 22px 0; }
+    h1 em { color: var(--copper); font-weight: 400; }
+    .hero-copy p { max-width: 430px; color: #d3c6b9; font: 15px/1.9 Arial, sans-serif; }
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 23px;
+      background: var(--copper);
+      color: #21150f;
+      font: 700 12px Arial, sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid var(--copper);
+      transition: .2s;
+    }
+    .button:hover { background: transparent; color: var(--cream); }
+    .hero-art {
+      min-height: 480px;
+      background:
+        linear-gradient(135deg, rgba(36,25,20,.12), rgba(36,25,20,.55)),
+        radial-gradient(ellipse at 50% 38%, #b98565 0 15%, transparent 15.5%),
+        radial-gradient(ellipse at 50% 66%, #6b4635 0 28%, transparent 28.5%),
+        linear-gradient(145deg, #a98b76, #4a3329 62%, #211711);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 35px;
+    }
+    .art-caption {
+      border: 1px solid rgba(255,250,244,.55);
+      color: var(--white);
+      padding: 13px 18px;
+      text-align: center;
+      font-style: italic;
+      background: rgba(36,25,20,.45);
+    }
+    section { padding: 85px 8%; }
+    .section-head { max-width: 650px; margin: 0 auto 42px; text-align: center; }
+    .section-head h2 { font-size: clamp(34px, 4vw, 48px); font-weight: 400; margin: 12px 0; }
+    .section-head p { color: #76685e; font: 14px/1.8 Arial, sans-serif; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service {
+      background: var(--white);
+      padding: 30px 26px;
+      border-bottom: 3px solid var(--copper);
+    }
+    .service-number { color: var(--copper); font: 12px Arial, sans-serif; letter-spacing: 2px; }
+    .service h3 { font-size: 24px; font-weight: 400; margin: 17px 0 10px; }
+    .service p { color: #76685e; font: 13px/1.8 Arial, sans-serif; }
+    .about {
+      background: var(--cream-dark);
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+    .about-art {
+      min-height: 340px;
+      background: linear-gradient(145deg, #c49a7b, #72513e 55%, #302018);
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 29px;
+      font-style: italic;
+      text-align: center;
+      padding: 25px;
+    }
+    .about h2 { font-size: 43px; font-weight: 400; line-height: 1.1; margin: 13px 0 20px; }
+    .about p { color: #6f6056; font: 14px/1.9 Arial, sans-serif; }
+    .about .button:hover { color: var(--brown); border-color: var(--brown); }
+    .visit { background: var(--brown); color: var(--cream); text-align: center; }
+    .visit .section-head p { color: #c9b9aa; }
+    .visit-details { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-top: 30px; }
+    .detail {
+      min-width: 210px;
+      padding: 20px;
+      border: 1px solid #6b5143;
+    }
+    .detail strong { display: block; color: var(--copper); font: 11px Arial, sans-serif; letter-spacing: 2px; margin-bottom: 8px; }
+    .detail span { color: #e5d9cf; font: 14px Arial, sans-serif; }
+    footer {
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      background: #1a110d;
+      color: #bca99a;
+      font: 11px Arial, sans-serif;
+    }
+    @media (max-width: 760px) {
+      header { flex-direction: column; }
+      nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+      .hero, .about { grid-template-columns: 1fr; }
+      .hero-copy { padding: 75px 8%; }
+      .hero-art { min-height: 300px; }
+      .services { grid-template-columns: 1fr; }
+      section { padding: 65px 7%; }
+      .about-art { min-height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">UNOFFICIAL WEBSITE CONCEPT · PREVIEW ONLY · NOT THE SALON'S OFFICIAL WEBSITE</div>
+  <header>
+    <a class="brand" href="#">THABISO'S <span>HAIR SALON</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#visit">Find us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" style="padding:0">
+      <div class="hero-copy">
+        <div class="eyebrow">Your style. Your moment.</div>
+        <h1>Good hair.<br><em>Great feeling.</em></h1>
+        <p>A fresh, welcoming salon experience starts with a style that feels like you. Explore this website concept created for Thabiso's Hair Salon.</p>
+        <a class="button" href="#services">Explore the salon</a>
+      </div>
+      <div class="hero-art">
+        <div class="art-caption">A look that's uniquely yours</div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-head">
+        <div class="eyebrow">The experience</div>
+        <h2>Made for your next look</h2>
+        <p>These are sample service categories for the concept. The salon's actual services and pricing would be added after confirmation.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="service-number">01 / STYLE</div>
+          <h3>Hair styling</h3>
+          <p>A space to showcase the salon's styling options, signature looks and finishing services.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">02 / CARE</div>
+          <h3>Hair care</h3>
+          <p>Feature available treatments and care services, with details confirmed by the salon.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">03 / YOUR LOOK</div>
+          <h3>Custom styles</h3>
+          <p>Showcase the styles the team enjoys creating and help customers know what to ask for.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-art">Your style<br>starts here.</div>
+      <div>
+        <div class="eyebrow">About the salon</div>
+        <h2>A little more you, every visit.</h2>
+        <p>This section can tell the real story of Thabiso's Hair Salon: its team, experience, approach and what makes the salon special. The wording and photos can be personalised with the owner's approval.</p>
+        <a class="button" href="#visit">Visit information</a>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="section-head">
+        <div class="eyebrow">Come through</div>
+        <h2>Let's get you looking fresh.</h2>
+        <p>The business listing places the salon in Kempton Park. Exact address, opening hours and preferred booking contact must be confirmed with the owner before this section goes live.</p>
+      </div>
+      <div class="visit-details">
+        <div class="detail"><strong>LOCATION</strong><span>Kempton Park · Confirm exact address</span></div>
+        <div class="detail"><strong>OPENING HOURS</strong><span>To be confirmed</span></div>
+        <div class="detail"><strong>BOOKINGS</strong><span>Preferred contact to be confirmed</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Thabiso's Hair Salon · Concept preview</span>
+    <span>Independent portfolio concept by ElevateNextZA · Not an official business website</span>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

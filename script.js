@@ -39,11 +39,10 @@ if (contactForm) {
       "\nService: " + service + "\n\nProject details:\n" + (message || "Not provided")
     );
 
-    // Replace this example address with the active business email before launch.
-    window.location.href = "mailto:hello@elevatenextza.co.za?subject=" + subject + "&body=" + body;
+    window.location.href = "mailto:Sibonkosi646@gmail.com?subject=" + subject + "&body=" + body;
 
     if (formStatus) {
-      formStatus.textContent = "Your email app should open with the enquiry prepared. Remember to replace the example email address before publishing.";
+      formStatus.textContent = "Your email app should open with the enquiry prepared. Review it and press Send to submit.";
     }
   });
 }

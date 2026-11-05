@@ -465,5 +465,83 @@
   </div>
 </footer>
 
+
+<!-- ======================================
+     ELEVATENEXT AI CHATBOT
+====================================== -->
+
+<button
+  type="button"
+  class="elevate-chat-button"
+  id="elevateChatButton"
+  aria-label="Open ElevateNext AI assistant"
+  aria-expanded="false"
+>
+  ✳ Chat with us
+</button>
+
+<section
+  class="elevate-chat-window"
+  id="elevateChatWindow"
+  aria-label="ElevateNext AI chat assistant"
+  aria-hidden="true"
+>
+
+  <div class="elevate-chat-header">
+    <div>
+      <h3>ElevateNext AI</h3>
+      <p><span class="chat-status-dot"></span> YOUR WEBSITE ASSISTANT</p>
+    </div>
+
+    <button
+      type="button"
+      class="elevate-chat-close"
+      id="elevateChatClose"
+      aria-label="Close chat"
+    >
+      ×
+    </button>
+  </div>
+
+  <div
+    class="elevate-chat-messages"
+    id="elevateChatMessages"
+    aria-live="polite"
+  ></div>
+
+  <div class="elevate-chat-quick">
+    <button type="button" data-question="What services do you offer?">Services</button>
+    <button type="button" data-question="What are your prices?">Pricing</button>
+    <button type="button" data-question="How do I get started?">Get started</button>
+  </div>
+
+  <form class="elevate-chat-form" id="elevateChatForm">
+    <input
+      type="text"
+      class="elevate-chat-input"
+      id="elevateChatInput"
+      placeholder="Ask us something..."
+      autocomplete="off"
+      maxlength="1200"
+      aria-label="Type your message"
+      required
+    >
+
+    <button
+      type="submit"
+      class="elevate-chat-send"
+      id="elevateChatSend"
+      aria-label="Send message"
+    >
+      ↑
+    </button>
+  </form>
+
+  <div class="elevate-chat-footer">
+    AI responses may not always be accurate. Please don't share private information.
+  </div>
+
+</section>
+
 </body>
 </html>

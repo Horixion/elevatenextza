@@ -983,6 +983,207 @@ a {
   color: #87918a;
 }
 
+/* ======================================
+   ELEVATENEXT AI CHATBOT
+====================================== */
+
+.elevate-chat-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 21px;
+  background: var(--lime);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .2);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.elevate-chat-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+}
+
+.elevate-chat-window {
+  position: fixed;
+  right: 24px;
+  bottom: 90px;
+  z-index: 9999;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  height: 490px;
+  max-height: calc(100vh - 120px);
+  background: #fff;
+  border: 1px solid #e7e9eb;
+  border-radius: 18px;
+  box-shadow: 0 12px 50px rgba(0, 0, 0, .22);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font);
+}
+
+.elevate-chat-window.open {
+  display: flex;
+}
+
+.elevate-chat-header {
+  background: var(--ink);
+  color: #fff;
+  padding: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elevate-chat-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.elevate-chat-header p {
+  margin: 6px 0 0;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--lime);
+}
+
+.chat-status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 5px;
+  background: var(--lime);
+  border-radius: 50%;
+}
+
+.elevate-chat-close {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.elevate-chat-messages {
+  flex: 1;
+  min-height: 0;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f7f8f6;
+}
+
+.elevate-chat-message {
+  max-width: 88%;
+  padding: 12px 14px;
+  border-radius: 13px;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.elevate-chat-message.bot {
+  align-self: flex-start;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid #e9ebed;
+}
+
+.elevate-chat-message.user {
+  align-self: flex-end;
+  background: var(--ink);
+  color: #fff;
+}
+
+.elevate-chat-message.loading {
+  color: #727b83;
+  font-style: italic;
+}
+
+.elevate-chat-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 12px 14px 0;
+  background: #fff;
+}
+
+.elevate-chat-quick button {
+  border: 1px solid #dfe3e5;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 7px 10px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.elevate-chat-quick button:hover {
+  background: #f0f5e8;
+  border-color: var(--lime);
+}
+
+.elevate-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 13px;
+  background: #fff;
+  border-top: 1px solid #e9ebed;
+}
+
+.elevate-chat-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #dfe3e5;
+  border-radius: 25px;
+  padding: 12px 14px;
+  outline: none;
+  font-family: var(--font);
+  font-size: 13px;
+}
+
+.elevate-chat-input:focus {
+  border-color: #9acb43;
+}
+
+.elevate-chat-send {
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.elevate-chat-send:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.elevate-chat-footer {
+  background: #fff;
+  color: #8a9299;
+  padding: 0 12px 10px;
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
 /* TABLET */
 
 @media(max-width: 800px) {
@@ -1244,6 +1445,21 @@ a {
     gap: 12px;
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  /* CHATBOT MOBILE */
+
+  .elevate-chat-button {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .elevate-chat-window {
+    right: 10px;
+    bottom: 75px;
+    width: calc(100vw - 20px);
+    max-width: none;
+    height: min(490px, calc(100dvh - 100px));
   }
 }
 

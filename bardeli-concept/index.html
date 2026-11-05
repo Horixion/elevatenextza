@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171916">
+  <meta name="description" content="An independent website concept for BarDeli Catering, showcasing catering, food experiences and event services in Johannesburg.">
+  <title>BarDeli Catering | Events, Beautifully Served</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#171916;--ink2:#22251f;--cream:#f5f1e8;--paper:#fffdf8;--muted:#aaa99f;--gold:#c9a66b;--gold2:#e4c995;--line:rgba(255,255,255,.13);--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.concept-bar{background:#d8c19a;color:#201d17;text-align:center;padding:9px 16px;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}.site-header{position:absolute;z-index:5;top:36px;left:0;width:100%;padding:22px 6.5%;display:flex;align-items:center;justify-content:space-between;color:#fff}.brand{font-family:var(--serif);font-size:27px;letter-spacing:.03em;line-height:1}.brand span{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold2);margin-top:7px}.nav{display:flex;align-items:center;gap:30px;font-size:12px;letter-spacing:.09em;text-transform:uppercase}.nav a{opacity:.88;transition:.2s}.nav a:hover{color:var(--gold2);opacity:1}.nav .nav-cta{border:1px solid rgba(255,255,255,.55);padding:12px 18px}.menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 12px}
+.hero{min-height:760px;height:min(890px,95vh);position:relative;display:flex;align-items:center;overflow:hidden;background:#1b1d19;color:white}.hero-image{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,15,13,.88) 0%,rgba(13,15,13,.64) 43%,rgba(13,15,13,.12) 100%),linear-gradient(0deg,rgba(13,15,13,.45),transparent 50%),url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=2200&q=85') center/cover}.hero-content{position:relative;z-index:1;width:min(720px,88%);margin:95px 0 0 10%}.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);font-weight:700;display:flex;align-items:center;gap:13px}.eyebrow:before{content:'';width:38px;height:1px;background:var(--gold)}h1,h2,h3,p{margin-top:0}h1{font:600 clamp(54px,7.5vw,100px)/.99 var(--serif);letter-spacing:-.045em;margin:24px 0}.hero h1 em{color:var(--gold2);font-weight:500}.hero-copy{max-width:480px;color:#e3e0d8;font-size:15px;line-height:1.9}.hero-actions{display:flex;align-items:center;gap:14px;margin-top:34px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 22px;background:var(--gold);color:#1c1b17;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--gold);transition:.25s;cursor:pointer}.btn:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-2px)}.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}.btn-outline:hover{color:var(--ink)}.hero-note{position:absolute;right:6.5%;bottom:45px;color:#eee;font-size:10px;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}.hero-scroll{position:absolute;bottom:38px;left:10%;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#ddd;display:flex;gap:13px;align-items:center}.hero-scroll:before{content:'';height:1px;width:45px;background:var(--gold)}
+.intro-strip{background:var(--gold);padding:23px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#211f1a}.intro-strip strong{font:600 21px var(--serif)}.intro-strip span{font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.section{padding:110px 8%}.section-dark{background:var(--ink);color:var(--cream)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:55px}.section-head h2{font:600 clamp(38px,5vw,62px)/1.05 var(--serif);letter-spacing:-.035em;margin:15px 0 0;max-width:650px}.section-head p{max-width:350px;color:#77766e;font-size:13px;line-height:1.9;margin:0}.section-dark .section-head p{color:#b9b7ad}.eyebrow-dark{color:#a47d45}.eyebrow-dark:before{background:#a47d45}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}.story-photo{position:relative;min-height:570px}.story-photo img{width:86%;height:540px;object-fit:cover;display:block}.story-photo:after{content:'';position:absolute;width:42%;height:45%;right:0;bottom:-20px;border:1px solid var(--gold);z-index:0}.story-photo .photo-tag{position:absolute;z-index:1;right:0;top:28px;background:var(--gold);padding:20px 24px;color:var(--ink);font:600 22px var(--serif)}.story-copy h2{font:600 clamp(40px,5vw,64px)/1.06 var(--serif);letter-spacing:-.04em;margin:17px 0 22px}.story-copy p{font-size:14px;color:#66665e;line-height:2}.story-points{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}.story-point{border-top:1px solid #d7d0c2;padding-top:14px}.story-point strong{display:block;font:600 20px var(--serif)}.story-point span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#817d72}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service-card{position:relative;min-height:390px;overflow:hidden;background:#292b25;color:white}.service-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.65;transition:transform .6s}.service-card:hover img{transform:scale(1.06)}.service-card:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,11,10,.9),transparent 75%)}.service-info{position:absolute;z-index:1;left:27px;right:25px;bottom:26px}.service-info small{color:var(--gold2);font-size:10px;letter-spacing:.2em;text-transform:uppercase}.service-info h3{font:600 31px var(--serif);margin:9px 0}.service-info p{font-size:12px;color:#dedbd2;line-height:1.8;margin:0;max-width:310px}
+.feature-band{display:grid;grid-template-columns:1fr 1fr;min-height:540px;background:#e8e0d1}.feature-image{min-height:480px;background:url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=85') center/cover}.feature-copy{padding:80px 12%;display:flex;flex-direction:column;justify-content:center}.feature-copy h2{font:600 clamp(40px,5vw,60px)/1.05 var(--serif);margin:16px 0}.feature-copy p{font-size:13px;line-height:2;color:#68665e}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;margin:25px 0 30px}.feature-list span{font-size:11px;display:flex;gap:9px;align-items:center}.feature-list span:before{content:'✦';color:#a47d45}
+.gallery-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;grid-template-rows:240px 240px;gap:14px}.gallery-grid img{width:100%;height:100%;object-fit:cover;display:block}.gallery-grid .tall{grid-row:span 2}.gallery-grid .wide{grid-column:span 2}
+.quote-band{background:var(--gold);color:#211f1a;padding:78px 8%;display:flex;align-items:center;justify-content:space-between;gap:30px}.quote-band h2{font:600 clamp(36px,4.5vw,58px)/1.05 var(--serif);max-width:650px;margin:0}.quote-band .btn{background:var(--ink);border-color:var(--ink);color:white;white-space:nowrap}.quote-band .btn:hover{background:#34372f}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:35px}.process-card{border-top:1px solid #45473f;padding-top:22px}.process-card b{font:500 38px var(--serif);color:var(--gold)}.process-card h3{font:600 25px var(--serif);margin:10px 0}.process-card p{color:#b9b7ad;font-size:12px;line-height:1.9}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:10%;align-items:start}.contact-copy h2{font:600 clamp(42px,5vw,62px)/1.04 var(--serif);margin:16px 0 22px}.contact-copy p{font-size:13px;color:#c2c0b7;line-height:2}.contact-detail{border-top:1px solid #44463f;padding:15px 0;margin-top:28px}.contact-detail span{display:block;color:var(--gold2);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:5px}.contact-detail a,.contact-detail strong{font-size:14px;color:#fff}.quote-form{background:#242720;padding:36px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{margin-bottom:17px}.field label{display:block;color:#c9c6bc;font-size:10px;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px}.field input,.field select,.field textarea{width:100%;background:#191b17;border:1px solid #44463f;color:#fff;padding:13px 14px;outline:none;font-size:12px}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{min-height:110px;resize:vertical}.quote-form .btn{width:100%}.form-note{color:#96958c;font-size:10px;margin:13px 0 0;line-height:1.7}
+.footer{background:#11130f;color:#b9b7ad;padding:35px 8%;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer .brand{color:white;font-size:22px}.footer small{font-size:10px;letter-spacing:.08em}.footer-links{display:flex;gap:20px;font-size:11px}.disclaimer{background:#0b0c0a;color:#77786f;text-align:center;padding:12px 18px;font-size:10px;line-height:1.6}
+@media(max-width:900px){.nav{gap:16px}.nav a{font-size:10px}.section{padding:85px 6%}.story-grid{gap:5%}.story-photo{min-height:470px}.story-photo img{height:450px}.services{gap:12px}.service-card{min-height:350px}.feature-copy{padding:55px 8%}.contact-grid{gap:5%}}
+@media(max-width:680px){.site-header{top:34px;padding:18px 6%;align-items:flex-start}.brand{font-size:23px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:75px;left:6%;right:6%;background:#20221d;padding:22px;flex-direction:column;align-items:stretch;gap:18px}.nav.open{display:flex}.nav .nav-cta{text-align:center}.hero{height:760px;min-height:690px}.hero-image{background-position:58% center;background-image:linear-gradient(90deg,rgba(13,15,13,.84),rgba(13,15,13,.35)),linear-gradient(0deg,rgba(13,15,13,.5),transparent 55%),url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85')}.hero-content{margin:95px 0 0 7%;width:86%}h1{font-size:59px}.hero-note{display:none}.hero-scroll{left:7%}.intro-strip{padding:20px 7%;display:block}.intro-strip span{display:block;margin-top:5px}.section{padding:75px 7%}.section-head{display:block;margin-bottom:35px}.section-head p{margin-top:18px}.story-grid,.contact-grid{grid-template-columns:1fr;gap:45px}.story-photo{min-height:390px}.story-photo img{height:370px;width:88%}.story-photo .photo-tag{font-size:18px;padding:14px 17px}.story-copy h2{font-size:47px}.services{grid-template-columns:1fr}.service-card{min-height:390px}.feature-band{grid-template-columns:1fr}.feature-image{min-height:330px}.feature-copy{padding:55px 7%}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 150px 150px}.gallery-grid .tall{grid-row:span 2}.gallery-grid .wide{grid-column:span 2}.quote-band{padding:55px 7%;display:block}.quote-band .btn{margin-top:25px}.process-grid{grid-template-columns:1fr;gap:25px}.form-row{grid-template-columns:1fr;gap:0}.quote-form{padding:25px 20px}.footer{padding:30px 7%;display:block}.footer-links{margin-top:20px;flex-wrap:wrap}.footer small{display:block;margin-top:18px}}
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Independent website concept · Created by ElevateNextZA · Not BarDeli's official website</div>
+  <header class="site-header">
+    <a class="brand" href="#top">BarDeli<span>Catering & Event Experiences</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <nav class="nav" id="mainNav">
+      <a href="#story">Our approach</a><a href="#services">What we do</a><a href="#gallery">Gallery</a><a href="#contact" class="nav-cta">Plan an event ↗</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <div class="eyebrow">Johannesburg · Catering & events</div>
+        <h1>Good food.<br><em>Great gatherings.</em></h1>
+        <p class="hero-copy">Thoughtful catering, beautifully presented food and event support that lets you spend less time worrying about the details — and more time enjoying the occasion.</p>
+        <div class="hero-actions"><a class="btn" href="#contact">Let's plan your event <span>↗</span></a><a class="btn btn-outline" href="#services">Explore what we do</a></div>
+      </div>
+      <div class="hero-scroll">Scroll to discover</div>
+      <div class="hero-note">Made for moments worth sharing</div>
+    </section>
+    <div class="intro-strip"><strong>From intimate tables to full-scale occasions.</strong><span>Food · Hospitality · Event coordination</span></div>
+
+    <section class="section" id="story">
+      <div class="story-grid">
+        <div class="story-photo">
+          <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1100&q=85" alt="Beautifully arranged catering table with food platters" loading="lazy">
+          <div class="photo-tag">Made with care.</div>
+        </div>
+        <div class="story-copy">
+          <div class="eyebrow eyebrow-dark">The BarDeli experience</div>
+          <h2>Every detail should feel considered.</h2>
+          <p>Whether you're bringing colleagues together, celebrating with family or hosting a special occasion, the food and hospitality help set the tone. BarDeli's offering spans catering and event support for a wide range of gatherings across Johannesburg.</p>
+          <p>This concept gives visitors a clearer path from discovering the service to exploring event options and making an enquiry.</p>
+          <div class="story-points">
+            <div class="story-point"><strong>Personal</strong><span>Thoughtful event planning</span></div>
+            <div class="story-point"><strong>Flexible</strong><span>Options for different occasions</span></div>
+            <div class="story-point"><strong>Food-led</strong><span>Menus and presentation</span></div>
+            <div class="story-point"><strong>Full-service</strong><span>Support beyond the menu</span></div>
+          </div>
+          <a class="btn" href="#contact">Enquire about catering ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="services">
+      <div class="section-head">
+        <div><div class="eyebrow">What we can help you create</div><h2>One occasion.<br>So many ways to make it special.</h2></div>
+        <p>Explore a selection of the catering and event experiences associated with BarDeli. Each occasion can be shaped around your guests, setting and requirements.</p>
+      </div>
+      <div class="services">
+        <article class="service-card"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=900&q=85" alt="Catering platters and shared food" loading="lazy"><div class="service-info"><small>01 / Gather around</small><h3>Event Catering</h3><p>Buffets, canapés, platters and menus for celebrations and special gatherings.</p></div></article>
+        <article class="service-card"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=85" alt="Elegant wedding reception table setup" loading="lazy"><div class="service-info"><small>02 / Celebrate together</small><h3>Weddings & Celebrations</h3><p>Food and hospitality for weddings, birthdays, engagements and meaningful milestones.</p></div></article>
+        <article class="service-card"><img src="https://images.unsplash.com/photo-1517457373958-b7 United?auto=format&fit=crop&w=900&q=85" alt="Corporate event table setting" loading="lazy"><div class="service-info"><small>03 / Bring people together</small><h3>Corporate Events</h3><p>Thoughtful catering for meetings, conferences, launches and company occasions.</p></div></article>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <div class="feature-image" role="img" aria-label="A carefully styled food table"></div>
+      <div class="feature-copy">
+        <div class="eyebrow eyebrow-dark">More than a menu</div>
+        <h2>The details make the difference.</h2>
+        <p>From the first conversation to the finishing touches, event support can bring the moving parts together and make hosting feel easier.</p>
+        <div class="feature-list"><span>Menu planning</span><span>Event coordination</span><span>Food presentation</span><span>Serving support</span><span>Corporate hospitality</span><span>Special occasions</span></div>
+        <a class="btn" href="#contact">Tell us what you're planning ↗</a>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-head">
+        <div><div class="eyebrow eyebrow-dark">A taste of the atmosphere</div><h2>Set the scene.<br>Make it memorable.</h2></div>
+        <p>A visual-first gallery helps prospective customers imagine the experience, understand the style and feel confident taking the next step.</p>
+      </div>
+      <div class="gallery-grid">
+        <img class="tall" src="https://images.unsplash.com/photo-1507504031003-b417219a0babel?auto=format&fit=crop&w=900&q=85" alt="Elegant event dining setup" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85" alt="Fresh food platter" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=85" alt="Grilled food prepared for a gathering" loading="lazy">
+        <img class="wide" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=85" alt="Fine dining table and plated meal" loading="lazy">
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <h2>Planning something worth gathering for?</h2>
+      <a class="btn" href="#contact">Start the conversation ↗</a>
+    </section>
+
+    <section class="section section-dark">
+      <div class="section-head"><div><div class="eyebrow">A simpler way to get started</div><h2>From first idea to event day.</h2></div><p>A clear enquiry journey makes it easier for visitors to share what they need and for the team to respond with the right next steps.</p></div>
+      <div class="process-grid">
+        <div class="process-card"><b>01</b><h3>Tell us about it</h3><p>Share the occasion, date, venue and an estimate of your guest numbers.</p></div>
+        <div class="process-card"><b>02</b><h3>Shape the details</h3><p>Discuss the menu, service style and event requirements with the team.</p></div>
+        <div class="process-card"><b>03</b><h3>Make it happen</h3><p>Confirm the arrangements and let the team help bring your gathering together.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="contact">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow">Let's talk about your event</div>
+          <h2>Let's make your next gathering one to remember.</h2>
+          <p>Have an event in mind? Share a few details and the BarDeli team can follow up to discuss your requirements.</p>
+          <div class="contact-detail"><span>Call the team</span><a href="tel:+27798739286">079 873 9286</a></div>
+          <div class="contact-detail"><span>Email</span><a href="mailto:info@bardelicatering.co.za">info@bardelicatering.co.za</a></div>
+          <div class="contact-detail"><span>Visit</span><strong>11 Cadoza Street, Westdene, Johannesburg</strong></div>
+        </div>
+        <form class="quote-form" id="quoteForm">
+          <div class="form-row">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" placeholder="Full name" required></div>
+            <div class="field"><label for="phone">Contact number</label><input id="phone" name="phone" placeholder="Your number" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="event">Type of event</label><select id="event" name="event" required><option value="">Choose an occasion</option><option>Wedding</option><option>Birthday or celebration</option><option>Corporate event</option><option>Funeral catering</option><option>High tea or luncheon</option><option>Other</option></select></div>
+            <div class="field"><label for="date">Event date</label><input id="date" name="date" type="date"></div>
+          </div>
+          <div class="field"><label for="guests">Estimated guests</label><input id="guests" name="guests" placeholder="e.g. 80"></div>
+          <div class="field"><label for="message">A little about your event</label><textarea id="message" name="message" placeholder="Venue, catering ideas, requirements..."></textarea></div>
+          <button class="btn" type="submit">Prepare my enquiry ↗</button>
+          <p class="form-note">Concept form: submitting opens a WhatsApp message to the publicly listed BarDeli contact number. No information is sent until you choose to send it in WhatsApp.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="brand" href="#top">BarDeli<span>Catering & Event Experiences</span></a>
+    <div class="footer-links"><a href="#story">Our approach</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
+    <small>Johannesburg, South Africa</small>
+  </footer>
+  <div class="disclaimer">Independent concept preview created by ElevateNextZA. This is not BarDeli Catering's official website or an approved redesign. Images are illustrative placeholders and should be replaced with BarDeli's own approved photography before any commercial launch.</div>
+  <script>
+    const menuToggle=document.getElementById('menuToggle');
+    const mainNav=document.getElementById('mainNav');
+    menuToggle.addEventListener('click',()=>mainNav.classList.toggle('open'));
+    mainNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>mainNav.classList.remove('open')));
+    document.getElementById('quoteForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const data=new FormData(this);
+      const lines=[
+        'Hi BarDeli Catering, I would like to enquire about an event.',
+        'Name: '+(data.get('name')||''),
+        'Contact: '+(data.get('phone')||''),
+        'Event: '+(data.get('event')||''),
+        'Date: '+(data.get('date')||'Not specified'),
+        'Estimated guests: '+(data.get('guests')||'Not specified'),
+        'Details: '+(data.get('message')||'Not specified')
+      ];
+      window.open('https://wa.me/27798739286?text='+encodeURIComponent(lines.join('\n')),'_blank');
+    });
+  </script>
+</body>
+</html>

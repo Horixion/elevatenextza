@@ -166,7 +166,6 @@ function addChatMessage(message, sender, extraClass = "") {
   messageElement.className =
     "elevate-chat-message " + sender + " " + extraClass;
 
-  // Use textContent so messages cannot inject HTML.
   messageElement.textContent = message;
 
   chatMessages.appendChild(messageElement);
@@ -271,13 +270,23 @@ async function sendElevateMessage(message) {
       })
     });
 
-    const data = await response.json();
+    let data;
+
+    try {
+      data = await response.json();
+    } catch {
+      throw new Error(
+        "Cloudflare returned an invalid response. HTTP " +
+        response.status
+      );
+    }
 
     loadingMessage.remove();
 
     if (!response.ok) {
       throw new Error(
-        data.error || "The AI service is unavailable."
+        data.error ||
+        "Cloudflare request failed. HTTP " + response.status
       );
     }
 
@@ -293,14 +302,19 @@ async function sendElevateMessage(message) {
     addChatMessage(data.reply, "bot");
 
   } catch (error) {
-    // Remove the unanswered user message from conversation history.
     chatHistory.pop();
 
     loadingMessage.remove();
 
+    const errorMessage =
+      error && error.message
+        ? error.message
+        : "An unknown connection error occurred.";
+
     addChatMessage(
-      "I'm having trouble connecting right now. Please try again shortly, or contact us at Sibonkosi646@gmail.com.",
-      "bot"
+      "DEBUG ERROR: " + errorMessage,
+      "bot",
+      "error"
     );
 
     console.error("ElevateNext AI error:", error);

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Independent website concept for Food by Shayne & Events Management.">
+<title>Food by Shayne | Catering & Events</title>
+<style>
+:root{--ink:#171512;--ink2:#24201b;--cream:#f5f0e8;--paper:#fffdf9;--gold:#c6a36a;--muted:#777168;--line:#ded6ca}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.notice{background:var(--gold);color:#201a11;text-align:center;padding:9px 14px;font-size:10px;font-weight:800;letter-spacing:1.5px}
+header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:var(--ink);color:var(--cream);gap:24px}
+.brand{font-family:Georgia,serif;font-size:23px;letter-spacing:.4px;line-height:1.1}
+.brand span{display:block;color:var(--gold);font:9px Arial,sans-serif;letter-spacing:3px;margin-top:7px}
+nav{display:flex;gap:27px;font-size:12px;letter-spacing:.5px;color:#e5ded3}
+nav a:hover{color:var(--gold)}
+.hero{min-height:660px;display:grid;grid-template-columns:1fr 1fr;background:var(--ink)}
+.hero-copy{padding:95px 8% 90px 14%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;color:var(--cream)}
+.kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1{font:400 clamp(48px,6vw,78px)/1.04 Georgia,serif;letter-spacing:-1.8px;margin:24px 0}
+h1 em{color:var(--gold);font-weight:400}
+.hero-copy p{max-width:430px;color:#c9c1b5;font-size:14px;line-height:1.9}
+.btn{display:inline-block;margin-top:30px;padding:14px 22px;border:1px solid var(--gold);background:var(--gold);color:#1d1811;font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;transition:.2s}
+.btn:hover{background:transparent;color:var(--gold)}
+.hero-image{min-height:560px;position:relative}
+.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,21,18,.2),transparent 35%),linear-gradient(0deg,rgba(23,21,18,.25),transparent 50%)}
+.hero-image img{object-position:center}
+section{padding:92px 8%}
+.section-head{text-align:center;max-width:680px;margin:0 auto 48px}
+.section-head h2{font:400 clamp(34px,4.4vw,52px)/1.12 Georgia,serif;margin:13px 0;color:var(--ink)}
+.section-head p{font-size:13px;color:var(--muted);line-height:1.9}
+.intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.intro-image{height:440px;position:relative}
+.intro-image img{object-position:center}
+.intro-copy h2{font:400 clamp(36px,4vw,50px)/1.12 Georgia,serif;margin:15px 0 20px}
+.intro-copy p{color:var(--muted);font-size:14px;line-height:2}
+.signature{margin-top:24px;color:#9a7845;font:italic 21px Georgia,serif}
+.services{background:var(--paper)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:var(--cream);padding:32px 27px;border-top:2px solid var(--gold)}
+.service .number{font-size:10px;color:#9b7949;letter-spacing:2px;font-weight:800}
+.service h3{font:400 25px Georgia,serif;margin:15px 0 10px}
+.service p{font-size:12px;color:var(--muted);line-height:1.9}
+.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:220px 220px;gap:14px}
+.gallery-grid figure{overflow:hidden;background:#ded6ca}
+.gallery-grid figure:first-child{grid-row:span 2}
+.gallery-grid img{transition:transform .5s}
+.gallery-grid figure:hover img{transform:scale(1.04)}
+.gallery-note{text-align:center;font-size:11px;color:var(--muted);margin-top:18px}
+.events{background:var(--ink);color:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.events h2{font:400 clamp(36px,4.5vw,54px)/1.12 Georgia,serif;margin:14px 0 20px}
+.events p{color:#c9c1b5;font-size:13px;line-height:2}
+.event-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.event-item{border:1px solid #51483d;padding:21px;color:#e8dfd2;font:15px Georgia,serif}
+.event-item span{display:block;color:var(--gold);font:9px Arial,sans-serif;letter-spacing:1.5px;margin-bottom:7px}
+.enquiry{background:#e9e1d5;text-align:center}
+.enquiry .section-head{margin-bottom:28px}
+.enquiry .btn{margin-top:10px}
+footer{background:#100f0d;color:#b9b0a4;padding:25px 7%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:10px}
+@media(max-width:800px){header{height:auto;min-height:82px;padding:20px 6%;flex-direction:column}nav{gap:15px;flex-wrap:wrap;justify-content:center}.hero{grid-template-columns:1fr}.hero-copy{padding:75px 8%}.hero-image{min-height:370px}.intro,.events{grid-template-columns:1fr;gap:35px}.intro-image{height:320px}.service-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 170px}.gallery-grid figure:first-child{grid-row:auto;grid-column:span 2}.events{padding:70px 8%}section{padding:70px 7%}}
+</style>
+</head>
+<body>
+<div class="notice">INDEPENDENT WEBSITE CONCEPT · NOT THE OFFICIAL BUSINESS WEBSITE</div>
+<header>
+<a class="brand" href="#home">Food by Shayne<span>CATERING & EVENTS MANAGEMENT</span></a>
+<nav><a href="#home">HOME</a><a href="#story">OUR STORY</a><a href="#services">SERVICES</a><a href="#gallery">GALLERY</a><a href="#enquire">ENQUIRE</a></nav>
+</header>
+<main>
+<section class="hero" id="home" style="padding:0">
+<div class="hero-copy">
+<div class="kicker">Thoughtfully prepared · Beautifully presented</div>
+<h1>Make every<br>gathering <em>memorable.</em></h1>
+<p>A refined catering and events website concept for Food by Shayne & Events Management. From intimate celebrations to corporate occasions, this design gives the brand room to tell its story.</p>
+<a class="btn" href="#services">Discover the experience</a>
+</div>
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1400&q=85" alt="Elegant catered table with a selection of beautifully presented food">
+</div>
+</section>
+
+<section class="intro" id="story">
+<div class="intro-image"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=85" alt="Freshly prepared food served for a gathering"></div>
+<div class="intro-copy">
+<div class="kicker">A taste of something special</div>
+<h2>Good food brings people together.</h2>
+<p>This space is designed to introduce the people behind Food by Shayne, their approach to catering and what makes their events memorable. The final version can feature the owner's real story, team photographs and confirmed experience.</p>
+<div class="signature">Food, people & moments.</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="section-head"><div class="kicker">What we can create together</div><h2>Services for every occasion</h2><p>Suggested service categories for this website concept. Actual offerings, packages and pricing will be confirmed directly with the business.</p></div>
+<div class="service-grid">
+<article class="service"><div class="number">01 / PRIVATE OCCASIONS</div><h3>Celebration catering</h3><p>A dedicated space for birthdays, family gatherings, anniversaries and special milestones.</p></article>
+<article class="service"><div class="number">02 / BUSINESS EVENTS</div><h3>Corporate catering</h3><p>Showcase confirmed options for meetings, workplace functions, launches and business events.</p></article>
+<article class="service"><div class="number">03 / EVENT SUPPORT</div><h3>Events management</h3><p>Explain the event planning and support services available, from preparation through to the day itself.</p></article>
+</div>
+</section>
+
+<section id="gallery">
+<div class="section-head"><div class="kicker">The visual experience</div><h2>A feast for the eyes.</h2><p>A gallery gives potential clients a glimpse of presentation, atmosphere and the details that make an event special. These are illustrative stock photographs, not photos of the business's actual work.</p></div>
+<div class="gallery-grid">
+<figure><img src="https://images.unsplash.com/photo- buffet" alt="Catering presentation placeholder" onerror="this.style.display='none'"></figure>
+<figure><img src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=700&q=80" alt="Fresh food dish"></figure>
+<figure><img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=700&q=80" alt="Food spread"></figure>
+<figure><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" alt="Restaurant and event dining atmosphere"></figure>
+<figure><img src="https://images.unsplash.com/photo-1464109723225-5e5e6a5b3b0a?auto=format&fit=crop&w=700&q=80" alt="Event table setting"></figure>
+</div>
+<div class="gallery-note">Illustrative stock imagery · To be replaced with approved Food by Shayne photographs.</div>
+</section>
+
+<section class="events">
+<div><div class="kicker">Your occasion, your way</div><h2>From the first idea to the final detail.</h2><p>This section can explain how clients work with the team, what event support is available and how to request a tailored quote. The process will be updated to reflect the business's actual workflow.</p></div>
+<div class="event-list">
+<div class="event-item"><span>01</span>Weddings & celebrations</div>
+<div class="event-item"><span>02</span>Private functions</div>
+<div class="event-item"><span>03</span>Corporate occasions</div>
+<div class="event-item"><span>04</span>Special gatherings</div>
+</div>
+</section>
+
+<section class="enquiry" id="enquire">
+<div class="section-head"><div class="kicker">Let's plan something memorable</div><h2>Tell us about your event.</h2><p>The finished website could include a quote request form collecting the event date, guest numbers, venue and catering requirements, with enquiries sent directly to the business's chosen contact channel.</p></div>
+<a class="btn" href="mailto:">Enquiry button preview</a>
+<p style="font-size:10px;color:#777168;margin-top:12px">Contact details and enquiry destination to be added after owner approval.</p>
+</section>
+</main>
+<footer><span>© <span id="year"></span> Food by Shayne & Events Management · Concept preview</span><span>Independent portfolio concept by ElevateNextZA · Not an official business website</span></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
